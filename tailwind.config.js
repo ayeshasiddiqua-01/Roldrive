@@ -1,10 +1,9 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,11 +12,12 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
-        brandDark: '#08121C',
-        brandGold: '#FDC65C',
+        primary: "#FDC65C",
+        brandDark: "#08121C",
+        brandGold: "#FDC65C",
       },
       screens: {
-        'custom': { 'max': '752px' },
+        custom: { max: "752px" },
       },
     },
   },

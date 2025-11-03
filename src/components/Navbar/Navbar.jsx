@@ -1,32 +1,22 @@
 "use client";
+
 import React, { useState } from "react";
-import {
-    AppBar,
-    Toolbar,
-    IconButton,
-    Menu,
-    MenuItem,
-    Button,
-    Box,
-    Typography,
-    Select,
-    FormControl,
-} from "@mui/material";
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Button, Box, Typography, Select, FormControl, } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import logo from "../../assets/images/logo.png";
 import Whatsapp from "../../assets/images/whatsapp.png";
+import Link from "next/link";
 
 const Navbar = () => {
     const [language, setLanguage] = useState("Eng");
 
     const navLinks = [
-        { label: "Services", href: "/services" },
-        { label: "Fleet", href: "/fleet" },
-        { label: "Business Solutions", href: "/business" },
-        { label: "Cities", href: "/cities" },
-        { label: "Airport Transfers", href: "/airport" },
+        { label: "Services", href: "#service" },
+        { label: "Fleet", href: "#fleet" },
+        { label: "Business Solutions", href: "#business" },
+        { label: "Cities", href: "#cities" },
+        { label: "Airport Transfers", href: "#airport" },
     ];
 
     return (
@@ -65,13 +55,13 @@ const Navbar = () => {
                     }}
                 >
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.label}
                             href={link.href}
                             className="text-[13px] font-medium tracking-wide text-white hover:text-[#00B894] transition-all duration-200 whitespace-nowrap"
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
                 </Box>
 
@@ -84,7 +74,7 @@ const Navbar = () => {
                         },
                     }}
                 >
-                    <Box className="flex items-center gap-x-2 cursor-pointer hover:text-green-400 transition">
+                    <Box className="flex items-center gap-x-2 cursor-pointer">
                         <Image
                             src={Whatsapp}
                             alt="WhatsApp Logo"
@@ -93,12 +83,12 @@ const Navbar = () => {
                             priority
                             className="cursor-pointer"
                         />
-                        <Typography
-                            variant="body2"
-                            className="text-white text-[14px] whitespace-nowrap"
-                        >
-                            Contact Us
-                        </Typography>
+                        <Link href="https://web.whatsapp.com/" target="_blank">
+                            <Typography variant="body2"
+                                className="text-white text-[14px] whitespace-nowrap">
+                                Contact Us
+                            </Typography>
+                        </Link>
                     </Box>
 
                     <FormControl variant="outlined" size="small">
@@ -122,19 +112,7 @@ const Navbar = () => {
 
                     <Button
                         variant="contained"
-                        sx={{
-                            backgroundColor: "white",
-                            color: "#0F2438",
-                            textTransform: "none",
-                            fontWeight: 600,
-                            fontSize: "14px",
-                            px: 3,
-                            width: "120px",
-                            borderRadius: "8px",
-                            "&:hover": {
-                                backgroundColor: "#f2f2f2",
-                            },
-                        }}
+                        className="btn-white"
                     >
                         Sign In
                     </Button>

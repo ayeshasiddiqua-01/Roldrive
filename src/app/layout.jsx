@@ -32,13 +32,6 @@ const theme = createTheme({
   },
 });
 
-// 🔹 TypeScript type definition removed
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

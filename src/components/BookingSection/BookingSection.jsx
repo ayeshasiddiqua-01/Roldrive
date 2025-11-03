@@ -1,15 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Box, Typography, Button, Grid, } from "@mui/material";
 import Image from "next/image";
-import BgImage from "../../assets/images/bg-img1.png";
-import Google from "../../assets/images/google.png";
+import BgImage from "../../assets/images/bgimg3.jpg";
 import Phone from "../../assets/images/phone.png";
 import Email from "../../assets/images/email.png";
-import WhatsApp from "../../assets/images/whatsapp.png";
-import Star from "../../assets/images/Star.png";
-import LeftArrow from "../../assets/images/left-arrow.png";
-import RightArrow from "../../assets/images/right-arrow.png";
 import Transfer from "../../assets/images/transfer.png";
 import Clock from "../../assets/images/clock.png";
 import Marker from "../../assets/images/line.png";
@@ -17,40 +13,44 @@ import Location from "../../assets/images/location-marker.png";
 import AddIcon from "../../assets/images/addIcon.png";
 import DateImg from "../../assets/images/date.png";
 import TimeImg from "../../assets/images/time.png";
-import { Box, Typography, TextField, Button, CircularProgress, Grid, } from "@mui/material";
+import GoldMan from '../../assets/images/goldman.png';
+import Kpmg from '../../assets/images/kpmg.png';
+import Deloitte from '../../assets/images/deloitte-1.png';
+import Amazon from '../../assets/images/amazon.png';
+import Google from '../../assets/images/google-1.png';
+import Microsoft from '../../assets/images/microsoft.png';
+import Barclays from '../../assets/images/barclays.png';
+import WhatsApp from '../../assets/images/whatsapp.png';
 
-const MainBanner = () => {
-
+export default function BookingSection() {
     return (
-        <Box className="relative w-full max-w-none min-h-screen text-white overflow-hidden">
+        <Box className="relative w-full max-w-none min-h-screen text-white overflow-hidden" id="airport">
             <Box className="absolute inset-0 -z-10 w-full h-full">
                 <Image
                     src={BgImage}
-                    alt="Luxury Car Background"
+                    alt=""
                     fill
-                    className="object-cover opacity-90 translate-y-10"
+                    className="object-cover object-[35%_center]"
                     priority
                 />
                 <div
                     className="absolute inset-0"
                     style={{
-                        backgroundImage:
-                            "linear-gradient(to right, rgba(8,18,28,1) 0%, rgba(8,18,28,1) 15%, rgba(0,0,0,0) 50%, rgba(8,18,28,0) 100%)",
+                        background: "linear-gradient(to bottom, rgba(8,16,23,0.9) 0%, rgba(8,16,23,0.6) 50%, rgba(8,16,23,0.9) 100%)",
                     }}
                 />
             </Box>
 
             <Box className="flex flex-wrap justify-between mt-40! lg:w-[83vw] ml-0! lg:ml-[135px]!" id="mainContainer">
-                <Box className="w-[38vw] 2xl:w-158" id="container">
+                <Box className="w-[33.1vw] 2xl:w-158" id="container">
                     <Typography variant="h3" component="h1" className="mb-2! 2xl:text-[52px]!">
-                        <span className="highlight">Luxury</span> Chauffeur Service in London – Airport, &nbsp; Corporate & VIP Travel
+                        Book Your London <span className="highlight">Chauffeur Today</span>
                     </Typography>
                     <Typography variant="body1">
-                        Professional chauffeurs, luxury vehicles and all-inclusive pricing.
-                        Complimentary airport waiting, real-time flight monitoring & 24/7 support.
+                        From Heathrow transfers to corporate roadshows, secure your chauffeur with RolDrive. Availability is limited during peak seasons — reserve now.
                     </Typography>
 
-                    <Box className="flex flex-wrap items-center gap-5 mt-10!">
+                    <Box className="flex flex-wrap items-center gap-5 mt-2! border-0! border-b-2! border-dashed! border-[#555555]! pb-5!">
                         <Box className="flex items-center gap-2 text-sm md:text-base">
                             <Image src={Phone} alt="Contact" width={20} height={40} priority className="cursor-pointer" />
                             <Typography className="font-inter text-white! 2xl:text-[18px]!">+44 204 592 0966</Typography>
@@ -64,31 +64,33 @@ const MainBanner = () => {
                         </Box>
                     </Box>
 
-                    <Box className="bg-gray-800/40 w-[27vw] h-18 mt-23! py-5! relative rounded-xl border-t-2! border-t-white!" id="rating">
-                        <Box>
-                            <Image src={LeftArrow} alt="Leftchevron" width={20} priority className="cursor-pointer absolute -left-2 mt-2! 2xl:mt-1! 2xl:w-8 2xl:-left-4" />
-                            <Image src={RightArrow} alt="Rightchevron" width={20} priority className="cursor-pointer absolute -right-2 mt-2! 2xl:mt-1! 2xl:w-8 2xl:-right-4" />
-                        </Box>
-                        <Box className="flex w-[65%] mx-10!">
-                            <Box>
-                                <Image src={Google} alt="Google" width={40} height={40} priority className="cursor-pointer 2xl:w-12" />
-                            </Box>
-                            <Box className="w-35 ml-2! -mt-2! 2xl:w-40">
-                                <Typography className="font-inter text-white! text-sm 2xl:text-[22px]!">
-                                    Google Rating
-                                </Typography>
-                                <Box className="flex font-inter text-white! text-sm 2xl:text-[22px]! w-full">
-                                    5.0
-                                    <Box className="ml-2! 400 2xl:pt-1!">
-                                        <Box className="flex">
-                                            {[...Array(5)].map((_, i) => (
-                                                <Image key={i} src={Star} alt="Rating" width={20} priority className="cursor-pointer" />
-                                            ))}
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Box>
-                        </Box>
+                    <Box>
+                        <Typography className="highlight italic mt-4!">
+                            Trusted by Leading Companies
+                        </Typography>
+                        <Grid container spacing={2} className="mb-6! mt-4!">
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={GoldMan} alt="Goldman" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Kpmg} alt="Kpmg" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Deloitte} alt="Deloitte" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Amazon} alt="Amazon" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Google} alt="Google" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Microsoft} alt="Microsoft" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                            <Grid item lg={1.7} className="flex items-center">
+                                <Image src={Barclays} alt="Barclays" width={50} height={50} className="cursor-pointer" />
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Box>
 
@@ -194,5 +196,3 @@ const MainBanner = () => {
         </Box>
     );
 };
-
-export default MainBanner;

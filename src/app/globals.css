@@ -6,8 +6,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #FDC65C;
 
-  /* Tailwind-compatible custom vars */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: Arial, Helvetica, sans-serif;
@@ -16,7 +16,6 @@
   --font-inter: "Inter", sans-serif;
 }
 
-/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,7 +23,6 @@
   }
 }
 
-/* Body base */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -35,8 +33,6 @@ h1 {
   font-family: var(--font-helvatica);
   font-weight: 700 !important;
   font-size: 38px !important;
-  /* line-height: 1.2px; */
-  /* letter-spacing: 1px !important; */
   color: #fff;
 }
 
@@ -59,9 +55,7 @@ p {
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 22px !important;
-  /* color: #E5EAFA; */
   color: #E5EAFA;
-  /* Tailwind gray-300 */
 }
 
 .highlight {
@@ -86,33 +80,104 @@ input::placeholder {
   color: #9CA3AF;
 }
 
-/* @media (max-width:752px) {
-  #mainContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-  }
-  #container {
-    width: 80% !important;
-  }
-  #form {
-    width: 80%;
-  }
-  #rating {
-    width: 90%
-  }
+.btn-primary {
+  background-color: #FF5302 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
 }
 
-@media (max-width:1023px) {
-  #form {
-    height: 100%;
-  }
-} */
+.btn-primary:hover {
+  background-color: #E03E00 !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary {
+  background-color: #FDC65C !important;
+  color: #ffffff !important;
+  width: 52% !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+
+.btn-outline {
+  border-color: white !important;
+  color: white !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.btn-outline:hover {
+  color: white;
+  transform: none;
+}
+
+.btn-white {
+  background-color: white !important;
+  color: #0F2438 !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 0.5rem 1.25rem !important;
+  width: 120px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.btn-white:hover {
+  background-color: #f2f2f2 !important;
+}
+
+.btn-danger {
+  border: 1px solid #FF5302 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  background-color: transparent !important;
+  padding: 8px 20px !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-danger:hover {
+  background-color: #FF5302 !important;
+  color: #ffffff !important;
+}
+
+.animation{
+  transform: translateY(-30px) !important;
+  padding-bottom: 56px;
+  height: 100%;
+  background-image: linear-gradient(
+  to top,
+  #081017 20%,
+  #081017 10%,
+  rgba(0, 0, 0, 0.45) 60%,
+  rgba(0, 0, 0, 0.1) 85%,
+  rgba(0, 0, 0, 0) 100%
+);
+transition: all 2s;
+}
+
+.animate:hover .animation{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-384px) !important;
+}
+
 @layer utilities {
   @media (max-width: 752px) {
     #mainContainer {
       @apply flex flex-col gap-[50px] items-center;
+    }
+    .driven {
+      @apply w-[80%] ml-0!
+    }
+    .requirement {
+      @apply justify-center!
     }
 
     #container {
@@ -154,28 +219,23 @@ input::placeholder {
     }
 
     .whychooseholder {
-      @apply h-[90%];
+      @apply h-[85vh]!;
     }
   }
 
   @media (max-width: 550px) {
     .features {
-      /* @apply h-[100%] w-[50%]; */
       @apply h-[80%] w-[90vw];
     }
 
     .minfeatures {
       @apply w-[40vw];
     }
-
-    .whychooseholder {
-      @apply h-[100%]
-    }
   }
 
   @media (max-width: 414px) {
     .features {
-      @apply h-[100%] gap-5 w-[80%] flex-nowrap;
+      @apply w-[80%] flex-nowrap;
     }
 
     .minfeatures {
@@ -183,7 +243,7 @@ input::placeholder {
     }
 
     .whychooseholder {
-      @apply h-[100%];
+      @apply h-[150vh]!;
     }
   }
 }
