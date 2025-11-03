@@ -4,7 +4,7 @@ import React from 'react';
 import Image from "next/image";
 import { Box, Button, Typography } from '@mui/material';
 import User from '../../assets/images/user.png';
-import Star from '../../assets/images/star.png';
+import Star from '../../assets/images/Star.png';
 
 export default function FeedbackSection() {
     
