@@ -62,9 +62,9 @@ export default function Footer() {
 
     return (
         <>
-            <Box className="bg-[#081017] w-full h-[90vh] flex justify-center items-center flex-col relative">
-                <Box className="w-[80vw] flex flex-wrap justify-between pb-4!">
-                    <Box className="w-[17vw]">
+            <Box className="bg-[#081017] w-full pl-[10%]! py-[3%]! relative">
+                <Box className="w-[85vw] flex gap-2 flex-wrap pb-4! pt-[5%]!">
+                    <Box className="w-[230px]">
                         <Image
                             src={logo}
                             alt="RolDrive Logo"
@@ -95,7 +95,7 @@ export default function Footer() {
                         </Box>
                     </Box>
 
-                    <Box className="w-[9vw] ml-22!">
+                    <Box className="w-[200px]! ml-[10%]! pr-[12%]!">
                         <Typography component="h1" className="text-[16px]! text-white!">
                             Fleet
                         </Typography>
@@ -108,7 +108,7 @@ export default function Footer() {
                         })}
                     </Box>
 
-                    <Box className="w-[14vw]">
+                    <Box className="w-[230px]">
                         <Typography component="h1" className="text-[16px]! text-white!">
                             Services
                         </Typography>
@@ -121,7 +121,7 @@ export default function Footer() {
                         })}
                     </Box>
 
-                    <Box className="w-[14vw]">
+                    <Box className="w-[180px]">
                         <Typography component="h1" className="text-[16px]! text-white!">
                             Top Cities
                         </Typography>
@@ -134,7 +134,7 @@ export default function Footer() {
                         })}
                     </Box>
 
-                    <Box className="w-[9vw]">
+                    <Box className="w-[130px]">
                         <Typography component="h1" className="text-[16px]! text-white!">
                             FAQ
                         </Typography>
@@ -166,7 +166,7 @@ export default function Footer() {
                         Copyright ©2024 - RolDrive. All Rights Reserved.
                     </Typography>
                 </Box>
-                <Box className="absolute right-25 bottom-25 ">
+                <Box className="absolute right-[7%] bottom-[10%] ">
                     <Link href="#mainBanner">
                         <Image src={UpArrow} alt="Whatsapp" width={110} height={40} priority className="cursor-pointer" />
                     </Link>
